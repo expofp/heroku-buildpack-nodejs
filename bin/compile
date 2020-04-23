@@ -102,17 +102,6 @@ features_init "nodejs" "$BUILD_DIR" "$CACHE_DIR" "$BP_DIR/features"
 log_initial_state
 generate_uuids
 
-### Failures that should be caught immediately
-
-fail_dot_heroku "$BUILD_DIR"
-fail_dot_heroku_node "$BUILD_DIR"
-fail_invalid_package_json "$BUILD_DIR/$NODEJS_DIR"
-fail_multiple_lockfiles "$BUILD_DIR/$NODEJS_DIR"
-fail_iojs_unsupported "$BUILD_DIR/$NODEJS_DIR"
-fail_yarn2_unsupported "$YARN" "$BUILD_DIR/$NODEJS_DIR"
-warn_prebuilt_modules "$BUILD_DIR/$NODEJS_DIR"
-warn_missing_package_json "$BUILD_DIR/$NODEJS_DIR"
-
 ### Gather more project information
 
 # we know that package.json is valid json, and can pull more data out
